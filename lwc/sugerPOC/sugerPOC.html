@@ -1,0 +1,54 @@
+<template>
+<div>
+    <lightning-button variant="brand" label="Brand" title="Primary action" onclick={handleClick}
+        class="slds-m-left_x-small"></lightning-button>
+</div>
+
+<template if:true={showModal}>
+    <section style="width: 100vw; height: 100vh; display: flex;  justify-content: center; align-items: center;" role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01"
+        class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container" style="width: 96vw; max-width: 1000px; height: max-content;">
+            <div class="slds-modal__header ">
+                <lightning-icon class="PositionLeft" icon-name="utility:close" size="small" alternative-text="Indicates close" onclick={closeModal}>
+                </lightning-icon>
+                <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate PositionLeft EditUsageMeteringConfiguration">Edit Usage Metering Configuration
+                </h1>
+                <button label="Save" title="Primary action" onclick={handleClick}
+                class="PositionRight saveButton">Save</button>
+            </div>
+            <div class="slds-modal__content slds-p-around_medium configDiv" id="modal-content-id-1" style="height: 80vh;overflow-y:auto;">
+                <!-- <div class="flexClass">
+                    <p class="UsageDimensionMapping">Usage Dimension Mapping</p>
+                    <lightning-input type="text" variant = "label-hidden" placeholder="Source Dimension Key" required></lightning-input>
+                    <lightning-input type="text" variant = "label-hidden" placeholder="Destination Dimension Key" required></lightning-input>
+                    <lightning-input type="number" variant = "label-hidden" placeholder="Multiplier" required></lightning-input>
+                    <lightning-button-icon icon-name="utility:delete"    alternative-text="Delete"   class="slds-m-left_xx-small" title="Delete"></lightning-button-icon>
+                </div>
+                <div class="ParentOfAddDimensionMapping">
+                    <div class="AddDimensionMapping" >Add dimension mapping</div>
+                </div> -->
+                <div style="width: 100%; display: flex">
+                    <div style="width: 30%">
+                        <p class="UsageDimensionMapping">Usage Dimension Mapping</p>
+                    </div>
+                    <div>
+                        <template for:each={ArrayOfObject} for:item="obj" for:index="index">
+                            <div class="flexClass" key={obj}>
+                                <lightning-input data-name="Community_Text" data-index={obj.index} type="text" variant = "label-hidden" placeholder="Source Dimension Key" required></lightning-input>
+                                <lightning-input  data-index={obj.index} type="text" variant = "label-hidden" placeholder="Destination Dimension Key" required></lightning-input>
+                                <lightning-input  data-index={obj.index} type="number" variant = "label-hidden" placeholder="Multiplier" required></lightning-input>
+                                <lightning-button-icon data-name="Community_Text" data-index={obj.index} icon-name="utility:delete"    alternative-text="Delete"   class="slds-m-left_xx-small" title="Delete" onclick={removeRow}></lightning-button-icon>
+                            </div>
+                            <br key={obj}/> 
+                        </template>
+                    </div>
+                </div>
+                <div class="ParentOfAddDimensionMapping" onclick={addRow}>
+                    <div class="AddDimensionMapping" >Add dimension mapping</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>
+</template>

@@ -1,0 +1,50 @@
+.PositionLeft{
+    float: left;
+}
+
+.PositionRight{
+    float: right;
+}
+
+.EditUsageMeteringConfiguration{
+    margin-left: 30px;
+}
+
+.sizeOfModal{
+    max-width: 100%;
+    width: 85%;
+}
+
+.saveButton{
+    background-color: rgb(5, 9, 32);
+    color: white;
+    font-weight: bold;
+    width: 75px;
+    max-width: none;
+    height: 37px;
+}
+
+.flexClass{
+    display: flex;
+    justify-content: space-around;
+}
+
+.UsageDimensionMapping{
+    font-size: large;
+    
+}
+
+.AddDimensionMapping{
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 90%;
+    width: 150px;
+    margin-left: 28.3%;
+    height: 2rem;
+    padding-top: 6px;
+}
+
+.ParentOfAddDimensionMapping{
+    margin-top: 20px;
+}
